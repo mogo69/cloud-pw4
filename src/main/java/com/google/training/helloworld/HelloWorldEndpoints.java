@@ -36,5 +36,12 @@ public class HelloWorldEndpoints {
 			@Named("period") String period) {
 		return new HelloClass(name, period);
 	}
+	
+	@ApiMethod(name = "getPrediction", path = "getPrediction", httpMethod = HttpMethod.GET)
+	public HelloClass getPrediction(@Named("name") String name) {
+		HelloClass hc = new HelloClass(name);
+		hc.getPrediction();
+		return hc;
+	}
 
 }

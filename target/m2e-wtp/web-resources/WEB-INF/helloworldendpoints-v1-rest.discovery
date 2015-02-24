@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/PH7Zu3h5cA1LLfeIaU7RqSW2368\"",
+ "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/mzEBnLa6MOBtMLcd_meDwUyf6dg\"",
  "discoveryVersion": "v1",
  "id": "helloworldendpoints:v1",
  "name": "helloworldendpoints",
@@ -11,9 +11,9 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rest",
- "baseUrl": "https://your-app-id.appspot.com/_ah/api/helloworldendpoints/v1/",
+ "baseUrl": "https://test2spot.appspot.com/_ah/api/helloworldendpoints/v1/",
  "basePath": "/_ah/api/helloworldendpoints/v1/",
- "rootUrl": "https://your-app-id.appspot.com/_ah/api/",
+ "rootUrl": "https://test2spot.appspot.com/_ah/api/",
  "servicePath": "helloworldendpoints/v1/",
  "batchPath": "batch",
  "parameters": {
@@ -77,11 +77,66 @@
    "properties": {
     "message": {
      "type": "string"
+    },
+    "prediction": {
+     "$ref": "void"
     }
    }
+  },
+  "void": {
+   "id": "void",
+   "type": "object"
   }
  },
  "methods": {
+  "getPrediction": {
+   "id": "helloworldendpoints.getPrediction",
+   "path": "getPrediction",
+   "httpMethod": "GET",
+   "parameters": {
+    "name": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "name"
+   ],
+   "response": {
+    "$ref": "HelloClass"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "greetByPeriod": {
+   "id": "helloworldendpoints.greetByPeriod",
+   "path": "greetByPeriod",
+   "httpMethod": "GET",
+   "parameters": {
+    "name": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    },
+    "period": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "name",
+    "period"
+   ],
+   "response": {
+    "$ref": "HelloClass"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
   "sayHello": {
    "id": "helloworldendpoints.sayHello",
    "path": "sayHello",

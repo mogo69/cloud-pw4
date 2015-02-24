@@ -58,6 +58,12 @@ function enableButtons () {
 	
 	// Update the button label now that the button is active
 	btn.value="Click me for a period greeting";
+
+	btn = document.getElementById("get_prediction");
+	btn.onclick=function(){getPrediction();};
+	
+	// Update the button label now that the button is active
+	btn.value="Click me to get perdiction!";
 }
 
 /*
@@ -90,15 +96,20 @@ function greetByName () {
 // Process the JSON response
 // In this case, just show an alert dialog box
 // displaying the value of the message field in the response
-function sayHelloCallback (response) {
-	alert(response.message);	
-}
 
 function greetByPeriod(){
 	var name = document.getElementById("name_field").value;
 	var period = document.getElementById("period_field").value; 
 	var request = gapi.client.helloworldendpoints.greetByPeriod({'name': name, 'period':period});
 	request.execute(sayHelloCallback);
+}
+function getPrediction(){
+	var name = document.getElementById("name_field").value;
+	var request = gapi.client.helloworldendpoints.getPrediction({'name': name});
+	request.execute(sayHelloCallback);
+}
+function sayHelloCallback (response) {
+	alert(response.message);	
 }
 
 

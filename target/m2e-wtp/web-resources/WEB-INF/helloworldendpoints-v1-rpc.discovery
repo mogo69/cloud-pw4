@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/PH7Zu3h5cA1LLfeIaU7RqSW2368\"",
+ "etag": "\"c05bU6zpvXPOpQakG5gG3IOJh8Y/mzEBnLa6MOBtMLcd_meDwUyf6dg\"",
  "discoveryVersion": "v1",
  "id": "helloworldendpoints:v1",
  "name": "helloworldendpoints",
@@ -11,8 +11,8 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rpc",
- "rootUrl": "https://your-app-id.appspot.com/_ah/api/",
- "rpcUrl": "https://your-app-id.appspot.com/_ah/api/rpc",
+ "rootUrl": "https://test2spot.appspot.com/_ah/api/",
+ "rpcUrl": "https://test2spot.appspot.com/_ah/api/rpc",
  "rpcPath": "/_ah/api/rpc",
  "parameters": {
   "alt": {
@@ -75,11 +75,61 @@
    "properties": {
     "message": {
      "type": "string"
+    },
+    "prediction": {
+     "$ref": "void"
     }
    }
+  },
+  "void": {
+   "id": "void",
+   "type": "object"
   }
  },
  "methods": {
+  "helloworldendpoints.getPrediction": {
+   "id": "helloworldendpoints.getPrediction",
+   "allowGet": true,
+   "parameters": {
+    "name": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "name"
+   ],
+   "returns": {
+    "$ref": "HelloClass"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "helloworldendpoints.greetByPeriod": {
+   "id": "helloworldendpoints.greetByPeriod",
+   "allowGet": true,
+   "parameters": {
+    "name": {
+     "type": "string",
+     "required": true
+    },
+    "period": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "name",
+    "period"
+   ],
+   "returns": {
+    "$ref": "HelloClass"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
   "helloworldendpoints.sayHello": {
    "id": "helloworldendpoints.sayHello",
    "allowGet": true,
